@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rounder — Support</title>
+<meta name="description" content="Support for Rounder, the poker buy-in tracker. Contact us and find answers to common questions.">
+<style>
+  :root {
+    --ground: #F4EFE2;
+    --surface: #FCFAF3;
+    --ink: #143528;
+    --muted: #5D6C63;
+    --line: rgba(20, 53, 40, 0.12);
+    --accent: #0F6A43;
+    --accent-ink: #FBF8EE;
+    --gold: #B58E38;
+    --radius: 16px;
+    --maxw: 40rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #0A2818;
+      --surface: #103A28;
+      --ink: #F1EDDF;
+      --muted: #9CB0A4;
+      --line: rgba(241, 237, 223, 0.14);
+      --accent: #43B47D;
+      --accent-ink: #06251A;
+      --gold: #D8B45E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0A2818;
+    --surface: #103A28;
+    --ink: #F1EDDF;
+    --muted: #9CB0A4;
+    --line: rgba(241, 237, 223, 0.14);
+    --accent: #43B47D;
+    --accent-ink: #06251A;
+    --gold: #D8B45E;
+  }
+  :root[data-theme="light"] {
+    --ground: #F4EFE2;
+    --surface: #FCFAF3;
+    --ink: #143528;
+    --muted: #5D6C63;
+    --line: rgba(20, 53, 40, 0.12);
+    --accent: #0F6A43;
+    --accent-ink: #FBF8EE;
+    --gold: #B58E38;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    font-size: 17px;
+  }
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: clamp(2rem, 6vw, 4.5rem) 1.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  header { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; }
+  .logo { width: 76px; height: 76px; }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 6vw, 2.6rem);
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin: 0;
+  }
+  .lede { color: var(--muted); margin: 0; max-width: 32rem; text-wrap: pretty; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+  }
+  .contact { display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; }
+  .contact h2, section h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.3rem;
+    margin: 0;
+    font-weight: 700;
+  }
+  .contact p { margin: 0; color: var(--muted); }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: var(--accent);
+    color: var(--accent-ink);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.8rem 1.3rem;
+    border-radius: 999px;
+    transition: transform 0.12s ease, filter 0.12s ease;
+  }
+  .btn:hover { filter: brightness(1.06); transform: translateY(-1px); }
+  .btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+  section.faq { display: flex; flex-direction: column; gap: 1.25rem; }
+  .faq > h2 { margin-bottom: 0.25rem; }
+  details {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    overflow: hidden;
+  }
+  summary {
+    cursor: pointer;
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    color: var(--gold);
+    font-size: 1.3rem;
+    line-height: 1;
+    transition: transform 0.15s ease;
+  }
+  details[open] summary::after { transform: rotate(45deg); }
+  summary:focus-visible { outline: 3px solid var(--gold); outline-offset: -3px; border-radius: 12px; }
+  details .answer { padding: 0 1.25rem 1.1rem; color: var(--muted); }
+  details .answer a { color: var(--accent); font-weight: 600; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding-top: 1.5rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <svg class="logo" viewBox="0 0 1024 1024" role="img" aria-label="Rounder icon" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="512" cy="512" r="500" fill="var(--accent)"/>
+        <g fill="var(--accent-ink)" opacity="0.9">
+          <g transform="rotate(0 512 512)"><rect x="472" y="70" width="80" height="120" rx="26"/></g>
+          <g transform="rotate(60 512 512)"><rect x="472" y="70" width="80" height="120" rx="26"/></g>
+          <g transform="rotate(120 512 512)"><rect x="472" y="70" width="80" height="120" rx="26"/></g>
+          <g transform="rotate(180 512 512)"><rect x="472" y="70" width="80" height="120" rx="26"/></g>
+          <g transform="rotate(240 512 512)"><rect x="472" y="70" width="80" height="120" rx="26"/></g>
+          <g transform="rotate(300 512 512)"><rect x="472" y="70" width="80" height="120" rx="26"/></g>
+        </g>
+        <circle cx="512" cy="512" r="430" fill="var(--accent-ink)"/>
+        <circle cx="512" cy="512" r="392" fill="none" stroke="var(--gold)" stroke-width="14"/>
+        <text x="512" y="648" text-anchor="middle" font-family="Georgia, serif" font-weight="bold" font-size="440" fill="var(--accent)">R</text>
+      </svg>
+      <p class="eyebrow">Rounder Support</p>
+      <h1>Need a hand?</h1>
+      <p class="lede">Rounder is a poker buy-in tracker for home games. If something's not working or you have an idea, we'd love to hear from you.</p>
+    </header>
+
+    <div class="card contact">
+      <h2>Get in touch</h2>
+      <p>Email us and we'll usually reply within a couple of days.</p>
+      <a class="btn" href="mailto:eric@broadarrow.tech?subject=Rounder%20Support">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
+        </svg>
+        eric@broadarrow.tech
+      </a>
+    </div>
+
+    <section class="faq">
+      <h2>Common questions</h2>
+
+      <details>
+        <summary>How do the Venmo payouts work?</summary>
+        <div class="answer">
+          No app can send Venmo payments on your behalf, so Rounder pre-fills the payment
+          (recipient, amount, and a note) and opens Venmo. You tap "Pay" inside Venmo to
+          confirm, and you're always in control of the final send.
+        </div>
+      </details>
+
+      <details>
+        <summary>Where is my data stored? Do you collect anything?</summary>
+        <div class="answer">
+          Everything stays on your device. Rounder has no account and no server, so player
+          names, Venmo handles, and game history never leave your phone.
+        </div>
+      </details>
+
+      <details>
+        <summary>The chip counts don't add up to the pot.</summary>
+        <div class="answer">
+          That's a miscount, and the end-of-night report flags it. You can either go back and
+          re-enter a chip count, or use the toggle on the report to absorb the difference across
+          the winners, the chip holders, or everyone, so the books balance.
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I reuse players between games?</summary>
+        <div class="answer">
+          Yes. Save a player once, add their Venmo handle, and they're one tap to add (and one
+          tap to pay) in every future game.
+        </div>
+      </details>
+
+      <details>
+        <summary>I found a bug or have a feature request.</summary>
+        <div class="answer">
+          Please <a href="mailto:eric@broadarrow.tech?subject=Rounder%20bug%2Fidea">email us</a>
+          with as much detail as you can, including your iOS version. It genuinely helps.
+        </div>
+      </details>
+    </section>
+
+    <footer>
+      <div>Rounder · Poker Buy-In Tracker</div>
+      <div>Support: <a href="mailto:eric@broadarrow.tech">eric@broadarrow.tech</a></div>
+    </footer>
+  </main>
+</body>
+</html>
